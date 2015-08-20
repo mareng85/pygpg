@@ -1,6 +1,6 @@
 class Help:
     def help_message(self):
-        help_string = '-pgphome\t\tThe pgp home folder containing the public and private keyrings\n' \
+        help_string = '-gpghome\t\tThe gpg home folder containing the public and private keyrings\n' \
                       '-type\t\t\tThe target type. Must be either "file" or "folder". E.g: [-type file /tmp/myfile.txt] or [-type folder /tmp/myfolder]\n' \
                       '-output\t\t\tThe output file\n' \
                       '-encrypt\t\tThe file to be encrypted\n' \

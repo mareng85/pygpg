@@ -16,9 +16,9 @@ def parse_arguments():
         print_help()
     else:
         for arg in range(0, noOfArguments):
-            if sys.argv[arg] == '-pgphome':
+            if sys.argv[arg] == '-gpghome':
                 home = sys.argv[arg + 1]
-                set_gnupgp_home(home)
+                set_gnupg_home(home)
                 home_is_set = True
 
             if sys.argv[arg] == '-encrypt':
@@ -51,7 +51,12 @@ def parse_arguments():
 
     if not home_is_set:
         home = None
-        set_gnupgp_home(home)
+        set_gnupg_home(home)
+
+    public_keys = gpg.list_keys()
+    if len(public_keys) == 0:
+        print "Could not find any keyrings. Make sure you have set a correct gpghome value!"
+        exit(0)
 
     if enc and dec:
         raise Exception("You cannot both encrypt and decrypt a file at the same time!")
@@ -114,7 +119,7 @@ def encrypt(type, target, output):
     else:
         raise Exception("Type must be 'folder' or 'file'!")
 
-def set_gnupgp_home(home):
+def set_gnupg_home(home):
     if home is None:
         home = expanduser("~")+'/.gnupg'
 
@@ -126,9 +131,7 @@ def get_recipient_fingerprint(uid):
     return public_keys[uid]['fingerprint']
 
 def main():
-    #print_help()
     parse_arguments()
-
 
 def print_help():
     h = Help()
