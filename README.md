@@ -16,8 +16,8 @@ This tool requires python-gnupg. You can install it using:
 ## Use
 
     Encrypt a file: 
-      ./pygpg -pgphome ~/.gnupg -encrypt -type file /tmp/myfile.txt -output /tmp/myfile.txt.pgp
+      ./pygpg -gpghome ~/.gnupg -encrypt -type file /tmp/myfile.txt -output /tmp/myfile.txt.pgp
     Encrypt a folder: 
-      ./pygpg -pgphome ~/.gnupg -encrypt -type folder /tmp/myfolder -output /tmp/myfolder.pgp
+      ./pygpg -gpghome ~/.gnupg -encrypt -type folder /tmp/myfolder -output /tmp/myfolder.pgp
     Decrypt a file or folder: 
-      ./pygpg -pgphome ~/.gnupg -decrypt /tmp/myfile.txt.pgp -output /tmp/myfile.txt
+      ./pygpg -gpghome ~/.gnupg -decrypt /tmp/myfile.txt.pgp -output /tmp/myfile.txt
