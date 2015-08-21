@@ -7,8 +7,8 @@ class Help:
                       '-decrypt\t\tThe file to be decrypted\n' \
                       '\n\n\n' \
                       'Examples:\n' \
-                      'Encrypt a file: ./pygpg -pgphome ~/.gnupg -encrypt -type file /tmp/myfile.txt -output /tmp/myfile.txt.pgp\n' \
-                      'Encrypt a folder: ./pygpg -pgphome ~/.gnupg -encrypt -type folder /tmp/myfolder -output /tmp/myfolder.pgp\n' \
-                      'Decrypt a file or folder: ./pygpg -pgphome ~/.gnupg -decrypt /tmp/myfile.txt.pgp -output /tmp/myfile.txt\n' \
+                      'Encrypt a file: ./pygpg -gpghome ~/.gnupg -encrypt -type file /tmp/myfile.txt -output /tmp/myfile.txt.pgp\n' \
+                      'Encrypt a folder: ./pygpg -gpghome ~/.gnupg -encrypt -type folder /tmp/myfolder -output /tmp/myfolder.pgp\n' \
+                      'Decrypt a file or folder: ./pygpg -gpghome ~/.gnupg -decrypt /tmp/myfile.txt.pgp -output /tmp/myfile.txt\n' \
 
         return help_string
